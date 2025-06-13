@@ -6,8 +6,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Building, Users, Trophy, Phone, Mail, MapPin } from "lucide-react";
+
 const Index = () => {
   const [selectedContactType, setSelectedContactType] = useState("cliente");
+
   const heroSlides = [{
     title: "Excelência em Incorporação",
     subtitle: "Transformando sonhos em realidade há mais de 30 anos",
@@ -50,6 +52,7 @@ const Index = () => {
     number: "25",
     label: "Prêmios Recebidos"
   }];
+
   return <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="shadow-sm border-b border-blue-100 bg-blue-900">
@@ -58,9 +61,9 @@ const Index = () => {
             <img src="/lovable-uploads/92f1bad9-a14e-4980-8bb9-185aa0eb2acc.png" alt="Logo da Empresa" className="h-12 w-auto" />
           </div>
           <nav className="hidden md:flex space-x-8">
-            <a href="#sobre" className="text-blue-900 hover:text-blue-700 font-medium">Sobre</a>
-            <a href="#diretoria" className="text-blue-900 hover:text-blue-700 font-medium">Diretoria</a>
-            <a href="#contato" className="text-blue-900 hover:text-blue-700 font-medium">Contato</a>
+            <a href="#sobre" className="text-white hover:text-blue-200 font-medium">Sobre</a>
+            <a href="#diretoria" className="text-white hover:text-blue-200 font-medium">Diretoria</a>
+            <a href="#contato" className="text-white hover:text-blue-200 font-medium">Contato</a>
           </nav>
         </div>
       </header>
@@ -317,4 +320,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
