@@ -6,7 +6,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Building, Users, Trophy, Phone, Mail, MapPin } from "lucide-react";
-
 const Index = () => {
   const [selectedContactType, setSelectedContactType] = useState("cliente");
 
@@ -19,23 +18,23 @@ const Index = () => {
       if (href && href.startsWith('#')) {
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
       }
     };
-
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     navLinks.forEach(link => {
       link.addEventListener('click', handleSmoothScroll);
     });
-
     return () => {
       navLinks.forEach(link => {
         link.removeEventListener('click', handleSmoothScroll);
       });
     };
   }, []);
-
   const heroSlides = [{
     title: "Excelência em Incorporação",
     subtitle: "Transformando sonhos em realidade há mais de 30 anos",
@@ -78,7 +77,6 @@ const Index = () => {
     number: "25",
     label: "Prêmios Recebidos"
   }];
-
   return <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="shadow-sm border-b border-blue-100 bg-blue-900">
@@ -139,9 +137,10 @@ const Index = () => {
               referência no mercado imobiliário de alto padrão.
             </p>
             <div className="inline-flex items-center bg-blue-50 px-8 py-4 rounded-lg border border-blue-200">
-              <span className="text-3xl font-bold text-blue-900 mr-3">1994</span>
+              <span className="text-3xl font-bold text-blue-900 mr-3">1995</span>
               <div className="w-12 h-px bg-blue-300 mx-3"></div>
-              <span className="text-3xl font-bold text-blue-900 ml-3">2024</span>
+              <span className="text-3xl font-bold text-blue-900 ml-3">2025
+            </span>
             </div>
           </div>
         </div>
@@ -372,5 +371,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
