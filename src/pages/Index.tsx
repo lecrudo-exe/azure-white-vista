@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,66 +6,56 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Building, Users, Trophy, Phone, Mail, MapPin } from "lucide-react";
-
 const Index = () => {
   const [selectedContactType, setSelectedContactType] = useState("cliente");
-
-  const heroSlides = [
-    {
-      title: "Excelência em Incorporação",
-      subtitle: "Transformando sonhos em realidade há mais de 30 anos",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-    },
-    {
-      title: "Projetos de Alto Padrão",
-      subtitle: "Desenvolvimento imobiliário premium para clientes exigentes",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
-    },
-    {
-      title: "Inovação e Qualidade",
-      subtitle: "Construindo o futuro com tecnologia e sustentabilidade",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-    }
-  ];
-
-  const directors = [
-    {
-      name: "João Silva",
-      position: "CEO & Fundador",
-      description: "Com mais de 25 anos de experiência no mercado imobiliário, João Silva fundou a empresa com a visão de criar empreendimentos únicos e de alta qualidade. Sua liderança estratégica tem sido fundamental para o crescimento sustentável da organização.",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
-    },
-    {
-      name: "Maria Santos",
-      position: "Diretora de Projetos",
-      description: "Arquiteta renomada com especialização em projetos residenciais de luxo. Maria é responsável por garantir que cada empreendimento atenda aos mais altos padrões de design e funcionalidade, sempre priorizando a satisfação do cliente.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-    },
-    {
-      name: "Carlos Oliveira",
-      position: "Diretor Comercial",
-      description: "Especialista em relacionamento com incorporadores e corretores, Carlos possui vasta experiência em negociações de alto valor. Sua expertise em mercado imobiliário premium tem sido essencial para o sucesso comercial da empresa.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-    }
-  ];
-
-  const stats = [
-    { icon: Building, number: "150+", label: "Empreendimentos Entregues" },
-    { icon: Users, number: "50K+", label: "Famílias Atendidas" },
-    { icon: Trophy, number: "25", label: "Prêmios Recebidos" }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white">
+  const heroSlides = [{
+    title: "Excelência em Incorporação",
+    subtitle: "Transformando sonhos em realidade há mais de 30 anos",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+  }, {
+    title: "Projetos de Alto Padrão",
+    subtitle: "Desenvolvimento imobiliário premium para clientes exigentes",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+  }, {
+    title: "Inovação e Qualidade",
+    subtitle: "Construindo o futuro com tecnologia e sustentabilidade",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+  }];
+  const directors = [{
+    name: "João Silva",
+    position: "CEO & Fundador",
+    description: "Com mais de 25 anos de experiência no mercado imobiliário, João Silva fundou a empresa com a visão de criar empreendimentos únicos e de alta qualidade. Sua liderança estratégica tem sido fundamental para o crescimento sustentável da organização.",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+  }, {
+    name: "Maria Santos",
+    position: "Diretora de Projetos",
+    description: "Arquiteta renomada com especialização em projetos residenciais de luxo. Maria é responsável por garantir que cada empreendimento atenda aos mais altos padrões de design e funcionalidade, sempre priorizando a satisfação do cliente.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+  }, {
+    name: "Carlos Oliveira",
+    position: "Diretor Comercial",
+    description: "Especialista em relacionamento com incorporadores e corretores, Carlos possui vasta experiência em negociações de alto valor. Sua expertise em mercado imobiliário premium tem sido essencial para o sucesso comercial da empresa.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+  }];
+  const stats = [{
+    icon: Building,
+    number: "150+",
+    label: "Empreendimentos Entregues"
+  }, {
+    icon: Users,
+    number: "50K+",
+    label: "Famílias Atendidas"
+  }, {
+    icon: Trophy,
+    number: "25",
+    label: "Prêmios Recebidos"
+  }];
+  return <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-blue-100">
+      <header className="shadow-sm border-b border-blue-100 bg-blue-900">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/92f1bad9-a14e-4980-8bb9-185aa0eb2acc.png" 
-              alt="Logo da Empresa" 
-              className="h-12 w-auto"
-            />
+            <img src="/lovable-uploads/92f1bad9-a14e-4980-8bb9-185aa0eb2acc.png" alt="Logo da Empresa" className="h-12 w-auto" />
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#sobre" className="text-blue-900 hover:text-blue-700 font-medium">Sobre</a>
@@ -80,13 +69,11 @@ const Index = () => {
       <section className="relative">
         <Carousel className="w-full">
           <CarouselContent>
-            {heroSlides.map((slide, index) => (
-              <CarouselItem key={index}>
+            {heroSlides.map((slide, index) => <CarouselItem key={index}>
                 <div className="relative h-[600px] bg-gradient-to-r from-blue-900 to-blue-700">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-20"
-                    style={{ backgroundImage: `url(${slide.image})` }}
-                  />
+                  <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
+                backgroundImage: `url(${slide.image})`
+              }} />
                   <div className="relative container mx-auto px-4 h-full flex items-center">
                     <div className="text-white max-w-2xl">
                       <h1 className="text-5xl font-bold mb-4">{slide.title}</h1>
@@ -98,8 +85,7 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
+              </CarouselItem>)}
           </CarouselContent>
           <CarouselPrevious className="left-4" />
           <CarouselNext className="right-4" />
@@ -118,15 +104,13 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-8 border-blue-200">
+            {stats.map((stat, index) => <Card key={index} className="text-center p-8 border-blue-200">
                 <CardContent className="pt-6">
                   <stat.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold text-blue-900 mb-2">{stat.number}</h3>
                   <p className="text-gray-600">{stat.label}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -141,17 +125,12 @@ const Index = () => {
           
           <Carousel className="w-full max-w-6xl mx-auto">
             <CarouselContent>
-              {directors.map((director, index) => (
-                <CarouselItem key={index}>
+              {directors.map((director, index) => <CarouselItem key={index}>
                   <Card className="border-blue-200">
                     <CardContent className="p-12">
                       <div className="flex flex-col md:flex-row items-center gap-8">
                         <div className="flex-shrink-0">
-                          <img 
-                            src={director.image} 
-                            alt={director.name}
-                            className="w-48 h-48 rounded-full object-cover border-4 border-blue-200"
-                          />
+                          <img src={director.image} alt={director.name} className="w-48 h-48 rounded-full object-cover border-4 border-blue-200" />
                         </div>
                         <div className="text-center md:text-left">
                           <h3 className="text-3xl font-bold text-blue-900 mb-2">{director.name}</h3>
@@ -161,8 +140,7 @@ const Index = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
@@ -179,7 +157,7 @@ const Index = () => {
               <div className="text-gray-500">
                 <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M8 5v10l7-5-7-5z"/>
+                    <path d="M8 5v10l7-5-7-5z" />
                   </svg>
                 </div>
                 <p className="text-xl">Vídeo comemorativo será disponibilizado em breve</p>
@@ -301,11 +279,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <img 
-                src="/lovable-uploads/92f1bad9-a14e-4980-8bb9-185aa0eb2acc.png" 
-                alt="Logo da Empresa" 
-                className="h-12 w-auto mb-4 filter brightness-0 invert"
-              />
+              <img src="/lovable-uploads/92f1bad9-a14e-4980-8bb9-185aa0eb2acc.png" alt="Logo da Empresa" className="h-12 w-auto mb-4 filter brightness-0 invert" />
               <p className="text-blue-200">
                 Excelência em incorporação imobiliária há mais de 30 anos.
               </p>
@@ -341,8 +315,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
