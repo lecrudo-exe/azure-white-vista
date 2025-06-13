@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -9,6 +9,32 @@ import { ArrowRight, Building, Users, Trophy, Phone, Mail, MapPin } from "lucide
 
 const Index = () => {
   const [selectedContactType, setSelectedContactType] = useState("cliente");
+
+  // Smooth scroll implementation
+  useEffect(() => {
+    const handleSmoothScroll = (e: Event) => {
+      e.preventDefault();
+      const target = e.target as HTMLAnchorElement;
+      const href = target.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll);
+    });
+
+    return () => {
+      navLinks.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll);
+      });
+    };
+  }, []);
 
   const heroSlides = [{
     title: "Excelência em Incorporação",
@@ -93,6 +119,21 @@ const Index = () => {
           <CarouselPrevious className="left-4" />
           <CarouselNext className="right-4" />
         </Carousel>
+      </section>
+
+      {/* 30 Years Anniversary Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-6">30 Anos de Excelência</h2>
+            <p className="text-xl text-blue-100 leading-relaxed">
+              Três décadas construindo sonhos e transformando vidas. Celebramos nossa trajetória de sucesso 
+              com orgulho e gratidão, sempre mantendo o compromisso com a qualidade e inovação que nos tornaram 
+              referência no mercado imobiliário de alto padrão.
+            </p>
+            <div className="mt-8 text-6xl font-bold text-white opacity-20">1994 - 2024</div>
+          </div>
+        </div>
       </section>
 
       {/* About Section */}
