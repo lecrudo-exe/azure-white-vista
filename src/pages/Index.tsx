@@ -122,16 +122,27 @@ const Index = () => {
       </section>
 
       {/* 30 Years Anniversary Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800">
+      <section className="py-20 bg-white border-b border-blue-100">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-6">30 Anos de Excelência</h2>
-            <p className="text-xl text-blue-100 leading-relaxed">
+            <div className="flex items-center justify-center mb-8">
+              <div className="h-px bg-blue-200 flex-1"></div>
+              <div className="px-8">
+                <div className="text-blue-600 text-sm font-semibold tracking-wider uppercase mb-2">Tradição e Excelência</div>
+                <h2 className="text-4xl font-bold text-blue-900">30 Anos de História</h2>
+              </div>
+              <div className="h-px bg-blue-200 flex-1"></div>
+            </div>
+            <p className="text-xl text-gray-700 leading-relaxed mb-8">
               Três décadas construindo sonhos e transformando vidas. Celebramos nossa trajetória de sucesso 
               com orgulho e gratidão, sempre mantendo o compromisso com a qualidade e inovação que nos tornaram 
               referência no mercado imobiliário de alto padrão.
             </p>
-            <div className="mt-8 text-6xl font-bold text-white opacity-20">1994 - 2024</div>
+            <div className="inline-flex items-center bg-blue-50 px-8 py-4 rounded-lg border border-blue-200">
+              <span className="text-3xl font-bold text-blue-900 mr-3">1994</span>
+              <div className="w-12 h-px bg-blue-300 mx-3"></div>
+              <span className="text-3xl font-bold text-blue-900 ml-3">2024</span>
+            </div>
           </div>
         </div>
       </section>
